@@ -1,0 +1,2 @@
+# quick-simple-short-projects
+quick simple &amp; short projects is a repository that will store my simple personal project code.Mainly I organize my all short projects with this repository.Almost every projects will be front-end related.I hope it will be a very great sourse for the newbie in the front end develoment Inshaallah.Insha Allah I will try add as much as possible simple and short projects in this repository.
