@@ -1,0 +1,12 @@
+.header__main--title{
+	font-size: 6rem;
+	color: $color-white;
+	letter-spacing: 5px;
+	line-height: 1;
+}
+
+.header__colors--active{
+	transform: scale(1.3);
+	border-color: $active-border-color !important;
+	transition: all .3s ease-in-out;
+}
