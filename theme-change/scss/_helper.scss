@@ -1,0 +1,23 @@
+$bg-light : #1f1e57;
+$bg-dark  : #050444;
+$color-white : #fff;
+$color-black : #000;
+$color-green : #1d8100;
+$color-red : #ad0303;
+$color-blue : #000f94;
+$active-border-color : #a39a9a;
+$container-width : 114rem;
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	box-sizing: border-box;
+	height: 100%;
+}
