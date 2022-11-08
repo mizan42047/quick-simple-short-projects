@@ -11,15 +11,8 @@ class ThemeChoose {
 	beforeInit() {
 		const savedData = this.#getSaveDataFromLocal();
 		if (savedData != undefined) {
-			const colorsCircle = document.querySelectorAll(`.header__colors--circle`);
 			const savedElement = document.querySelector(`.header__colors--circle[data-color="${savedData}"]`);
-			colorsCircle.forEach((element) => {
-				if (element.classList.contains("header__colors--active")) {
-					element.classList.remove("header__colors--active");
-				}
-			})
-
-			savedElement.classList.add("header__colors--active");
+			this.#setScaleinCurrentElement(savedElement);
 			this.#generateCSS(savedData);
 		}
 	}
@@ -28,7 +21,7 @@ class ThemeChoose {
 		let selectedColor = this.getSelectedColor(event);
 		this.#setScaleinCurrentElement(event.target);
 		this.#saveDatainLocalStorage(selectedColor);
-		this.#generateCSS(selectedColor);
+		selectedColor ? this.#generateCSS(selectedColor) : "";
 	}
 
 	getSelectedColor(event) {
@@ -37,7 +30,7 @@ class ThemeChoose {
 	}
 
 	#setScaleinCurrentElement(element) {
-		if (typeof this.currentSelectedColor === "string") {
+		if (element.classList.contains("header__colors--circle")) {
 			const colorsCircle = document.querySelectorAll(".header__colors--circle");
 			colorsCircle.forEach((element) => {
 				element.classList.remove("header__colors--active");
