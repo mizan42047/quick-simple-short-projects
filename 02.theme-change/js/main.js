@@ -26,7 +26,7 @@ class ThemeChoose {
 
 	init(event) {
 		let selectedColor = this.getSelectedColor(event);
-		this.#setOpacityinCurrentElement(event);
+		this.#setScaleinCurrentElement(event.target);
 		this.#saveDatainLocalStorage(selectedColor);
 		this.#generateCSS(selectedColor);
 	}
@@ -36,13 +36,13 @@ class ThemeChoose {
 		return this.currentSelectedColor;
 	}
 
-	#setOpacityinCurrentElement(event) {
+	#setScaleinCurrentElement(element) {
 		if (typeof this.currentSelectedColor === "string") {
 			const colorsCircle = document.querySelectorAll(".header__colors--circle");
 			colorsCircle.forEach((element) => {
 				element.classList.remove("header__colors--active");
 			})
-			event.target.classList.add("header__colors--active");
+			element.classList.add("header__colors--active");
 		}
 	}
 
