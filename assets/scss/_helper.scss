@@ -1,9 +1,0 @@
-$header-bg : #ffffff;
-$header-boxshadow-color : #654aff;
-$content-width: 114rem;
-
-@mixin responsive($device-width){
-	@media screen and (max-width: $device-width) {
-		@content;
-	}
-}

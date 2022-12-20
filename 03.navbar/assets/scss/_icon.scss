@@ -1,0 +1,65 @@
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: 'single-page';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon {
+	&-cart::before {
+		content: "\e900";
+	}
+
+	&-shopping:before {
+		content: "\e900";
+	}
+
+	&-ecommerce:before {
+		content: "\e900";
+	}
+
+	&-buy:before {
+		content: "\e900";
+	}
+
+	&-purchase:before {
+		content: "\e900";
+	}
+
+	&-home:before {
+		content: "\e901";
+	}
+
+	&-tab:before {
+		content: "\ea45";
+	}
+
+	&-contact_mail:before {
+		content: "\e906";
+	}
+
+	&-credit_card:before {
+		content: "\e902";
+	}
+
+	&-payment:before {
+		content: "\e902";
+	}
+
+	&-payments:before {
+		content: "\e903";
+	}
+
+	&-account_box:before {
+		content: "\e904";
+	}
+
+	&-shopping-cart:before {
+		content: "\e905";
+	}
+}
