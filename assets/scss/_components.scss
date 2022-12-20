@@ -1,0 +1,195 @@
+.header-navbar {
+	max-width: $content-width;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 6rem;
+
+	@include responsive(73.125em) {
+		padding: 0 1.5rem;
+	}
+}
+
+.header-logo {
+	flex: 1;
+
+	&-img {
+		max-width: 6rem;
+		height: auto;
+	}
+}
+
+.header-menu {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include responsive(43.75em) {
+		display: none;
+	}
+
+	&-btn {
+		cursor: pointer;
+		display: none;
+		position: static;
+		top: 2rem;
+		right: 10px;
+		z-index: 99;
+
+		@include responsive(43.75em) {
+			display: block;
+		}
+
+		&-icon {
+			width: 2.5rem;
+			height: 3px;
+			background-color: #808080;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+
+			&::after,
+			&::before {
+				content: "";
+				width: 100%;
+				height: 3px;
+				background-color: #808080;
+				display: inline-block;
+				position: absolute;
+				transition: all .3s ease-in-out;
+			}
+
+			&::before {
+				transform: translateY(-.8rem);
+			}
+
+			&::after {
+				transform: translateY(.8rem);
+			}
+		}
+
+		&.active {
+			.header-menu-btn-icon {
+				background-color: transparent;
+
+				&::after {
+					transform: rotate(135deg);
+					background-color: #ffffff;
+				}
+
+				&::before {
+					transform: rotate(-135deg);
+					background-color: #ffffff;
+				}
+			}
+		}
+	}
+
+	&-item {
+		padding: 2.1rem 1rem;
+		transition: .3s ease-in-out;
+		cursor: pointer;
+
+		&-link {
+			text-decoration: none;
+			font-size: 1.5rem;
+			font-weight: 500;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 5px;
+		}
+
+		&:hover,
+		&.active {
+			background-color: #331dff;
+
+			a {
+				color: #fff;
+			}
+		}
+	}
+}
+
+.drawer {
+	width: 0;
+	height: 100%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 9999;
+	transition: all .4s ease-in-out;
+	display: none;
+
+	@include responsive(43.75em) {
+		display: block;
+	}
+
+	&-content {
+		height: 100%;
+		width: 100%;
+		background-color: #808080;
+		padding: 2.5rem;
+		position: relative;
+
+		&-close {
+			position: absolute;
+			top: 2.5rem;
+			left: 1rem;
+			background-color: unset;
+			border: none;
+			outline: none;
+			width: 3.5rem;
+			height: 3.5rem;
+			cursor: pointer;
+
+			&::after,
+			&::before {
+				content: "";
+				position: absolute;
+				width: 2.6rem;
+				height: 3px;
+				top: 0;
+				left: 0;
+				background-color: #cdcaca;
+				border-radius: .5rem;
+			}
+
+			&::before {
+				transform: rotate(-135deg);
+			}
+
+			&::after {
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&-active {
+		width: 60%;
+	}
+}
+
+.mobile-menu-container {
+	padding: 2.5rem;
+	.header-menu {
+		display: block;
+	}
+}
+
+.menu-overlay {
+	transition: all .3s ease-in;
+	opacity: 0;
+	&.overlay-active {
+		height: 100vh;
+		width: 100%;
+		position: fixed;
+		background: linear-gradient(to bottom, rgb(76 76 76 / 94%), rgb(0 0 0 / 63%));
+		top: 0;
+		left: 0;
+		opacity: 1;
+		transition: all .3s ease-in;
+	}
+}
